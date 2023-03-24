@@ -5,7 +5,7 @@ import qrcode
 from pyln.client import LightningRpc
 from aiogram import Bot, Dispatcher, executor, types
 
-from testconfig import BOT_TOKEN
+from config import BOT_TOKEN, RPC_PATH
 
 logging.basicConfig(filename='bot.log', encoding='utf-8', level=logging.INFO,
                     format='%(asctime)s : %(module)s : %(message)s')
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
-l = LightningRpc()
+l = LightningRpc(RPC_PATH)
 
 help_message = f'This is the tip bot of https://t.me/l_coholic. Just enter the amount of sats you would like to donate.' \
 
